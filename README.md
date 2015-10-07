@@ -15,7 +15,7 @@ Clark Kent   | Metropolis
 Conner Kent  | Metropolis
 Barry Allen  | Central City
 
-This can be achieved with `@Facet`. Here is an example from [PersonRepository.java](src/main/java/my/rashidi/data/solr/domain/PersonRepository.java):
+This can be achieved with `@Facet`. Here is an example from [PersonRepository.java](src/main/java/my/zin/rashidi/data/solr/domain/PersonRepository.java):
 
 ```
 @Query(value = "*:*")
@@ -23,7 +23,7 @@ This can be achieved with `@Facet`. Here is an example from [PersonRepository.ja
 FacetPage<Person> findAllAndFacetByLocation(Pageable pageable);
 ```
 
-The client will be call `findAllAndFacetByLocation`. Taken from [PersonRepositoryTests.java](src/test/java/my/rashidi/data/solr/domain/PersonRepositoryTests.java):
+The client will be call `findAllAndFacetByLocation`. Taken from [PersonRepositoryTests.java](src/test/java/my/zin/rashidi/data/solr/domain/PersonRepositoryTests.java):
 
 ```
 Collection<String> locations = new ArrayList<>();
