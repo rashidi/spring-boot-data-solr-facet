@@ -23,7 +23,7 @@ This can be achieved with `@Facet`. Here is an example from [PersonRepository.ja
 FacetPage<Person> findAllAndFacetByLocation(Pageable pageable);
 ```
 
-The client will be call `findAllAndFacetByLocation`. Taken from [PersonRepositoryTests.java](src/test/java/my/zin/rashidi/data/solr/domain/PersonRepositoryTests.java):
+The client will call `findAllAndFacetByLocation`. Taken from [PersonRepositoryTests.java](src/test/java/my/zin/rashidi/data/solr/domain/PersonRepositoryTests.java):
 
 ```
 Collection<String> locations = new ArrayList<>();
