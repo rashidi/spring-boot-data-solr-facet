@@ -31,7 +31,7 @@ Collection<String> locations = new ArrayList<>();
 Pageable pageable = new PageRequest(0, 10);
 FacetPage<Person> results = repository.findAllAndFacetByLocation(pageable);
 
-results.getFacetResultPage("location").getContent().forEach(
+results.getFacetResultPage(Person.FIELD_LOCATION).getContent().forEach(
     content -> locations.add(content.getValue())
 );
 ```
