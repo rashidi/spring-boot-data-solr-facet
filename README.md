@@ -5,7 +5,7 @@ With less code there will be less mistake
 While exploring Solr I discovered `facet` which similar to SQL `DISTINCT`. One thing lead to another I learnt that `spring-data-solr` supports `facet` with `@Facet` annotation.
 
 ## Example
-We would like to get distinct of location from the following table:
+We would like to get distinct of location from the following table (both columns has `multiValued` disabled - `multiValued:false`):
 
 name         | location
 -------------|-------------
