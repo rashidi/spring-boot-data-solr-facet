@@ -1,9 +1,7 @@
 package my.zin.rashidi.data.solr.domain;
 
 import my.zin.rashidi.data.solr.Application;
-import org.junit.After;
 import org.junit.Assert;
-import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -28,15 +26,6 @@ public class PersonRepositoryTests {
 
     @Autowired
     private PersonRepository repository;
-
-    @Before
-    public void init() {
-        repository.save(new Person("Bruce Wayne", "Gotham City"));
-        repository.save(new Person("Dick Grayson", "Gotham City"));
-        repository.save(new Person("Clark Kent", "Metropolis"));
-        repository.save(new Person("Conner Kent", "Metropolis"));
-        repository.save(new Person("Barry Allen", "Central City"));
-    }
 
     @Test
     public void findAllAndFacetByLocation() {
@@ -68,8 +57,4 @@ public class PersonRepositoryTests {
         );
     }
 
-    @After
-    public void after() {
-        repository.deleteAll();
-    }
 }

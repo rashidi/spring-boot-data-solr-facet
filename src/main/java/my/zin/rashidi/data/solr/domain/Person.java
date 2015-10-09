@@ -13,7 +13,7 @@ public class Person {
     public final static String FIELD_LOCATION = "location";
 
     @Id
-    @Field
+    @Field("_id")
     private String id;
 
     @Field

@@ -1,0 +1,37 @@
+[
+  {
+    "_id": "7a0a33ba-b923-4526-87a8-30052161f46e",
+    "_class": "my.zin.rashidi.data.solr.domain.Person",
+    "_version_": 1514519876052451328,
+    "name": "Dick Grayson",
+    "location": "Gotham City"
+  },
+  {
+    "_id": "89572d7f-8124-4df4-b377-67a350f860a2",
+    "_class": "my.zin.rashidi.data.solr.domain.Person",
+    "_version_": 1514519876447764480,
+    "name": "Barry Allen",
+    "location": "Central City"
+  },
+  {
+    "_id": "568d40e9-19e2-4d66-9507-5b5ce642e94a",
+    "_class": "my.zin.rashidi.data.solr.domain.Person",
+    "_version_": 1514519875801841664,
+    "name": "Bruce Wayne",
+    "location": "Gotham City"
+  },
+  {
+    "_id": "e9fe959a-e484-468a-9f3a-421e7b72135e",
+    "_class": "my.zin.rashidi.data.solr.domain.Person",
+    "_version_": 1514519876302012416,
+    "name": "Conner Kent",
+    "location": "Metropolis"
+  },
+  {
+    "_id": "e15e0776-edf2-40b3-b0ab-8fb42a9af916",
+    "_class": "my.zin.rashidi.data.solr.domain.Person",
+    "_version_": 1514519876168843264,
+    "name": "Clark Kent",
+    "location": "Metropolis"
+  }
+]
