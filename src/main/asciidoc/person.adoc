@@ -33,8 +33,12 @@ You can also perform the same request with curl.
 include::{snippets}/person-example/curl-request.adoc[]
 
 [[usage-response]]
-=== Request
+=== Response
 
-If the person you are looking for is available their name will be returned as a result.
+If the person you are looking for is available their information will be returned.
+
+include::{snippets}/person-example/response-fields.adoc[]
+
+An example for _Bruce Wayne_:
 
 include::{snippets}/person-example/http-response.adoc[]
