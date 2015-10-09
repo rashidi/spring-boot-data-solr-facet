@@ -1,0 +1,40 @@
+= RESTful Person API Guide
+Rashidi Zin;
+:doctype: book
+:icons: font
+:source-highlighter: highlightjs
+:toc: left
+:toclevels: 4
+:sectlinks:
+
+[[introduction]]
+== Introduction
+
+Person RESTful service allows you to find out if the person you know is a superhero.
+
+[[usage]]
+== Usage
+
+Example of request and response.
+
+[[usage-request]]
+=== Request
+
+A `GET` request with the following parameters.
+
+include::{snippets}/person-example/request-parameters.adoc[]
+
+Example of a HTTP request.
+
+include::{snippets}/person-example/http-request.adoc[]
+
+You can also perform the same request with curl.
+
+include::{snippets}/person-example/curl-request.adoc[]
+
+[[usage-response]]
+=== Request
+
+If the person you are looking for is available their name will be returned as a result.
+
+include::{snippets}/person-example/http-response.adoc[]

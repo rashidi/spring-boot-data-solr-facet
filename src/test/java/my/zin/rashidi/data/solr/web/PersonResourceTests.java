@@ -10,14 +10,17 @@ import org.springframework.boot.test.SpringApplicationConfiguration;
 import org.springframework.boot.test.WebIntegrationTest;
 import org.springframework.http.MediaType;
 import org.springframework.restdocs.RestDocumentation;
-import org.springframework.restdocs.mockmvc.MockMvcRestDocumentation;
-import org.springframework.restdocs.mockmvc.RestDocumentationRequestBuilders;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 import org.springframework.test.web.servlet.MockMvc;
 import org.springframework.test.web.servlet.setup.MockMvcBuilders;
 import org.springframework.web.context.WebApplicationContext;
 
 import static org.hamcrest.Matchers.is;
+import static org.springframework.restdocs.mockmvc.MockMvcRestDocumentation.document;
+import static org.springframework.restdocs.mockmvc.MockMvcRestDocumentation.documentationConfiguration;
+import static org.springframework.restdocs.mockmvc.RestDocumentationRequestBuilders.get;
+import static org.springframework.restdocs.request.RequestDocumentation.parameterWithName;
+import static org.springframework.restdocs.request.RequestDocumentation.requestParameters;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.jsonPath;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
 
@@ -43,18 +46,24 @@ public class PersonResourceTests {
     @Autowired
     public void setUp() {
         mockMvc = MockMvcBuilders.webAppContextSetup(context).apply(
-                MockMvcRestDocumentation.documentationConfiguration(restDocumentation)
+                documentationConfiguration(restDocumentation)
         ).build();
     }
 
     @Test
     public void findByName() throws Exception {
         mockMvc.perform(
-                RestDocumentationRequestBuilders.get("http://localhost:" + port + "/person?name=Bruce Wayne")
+                get("http://localhost:" + port + "/person")
+                        .param("name", "Bruce Wayne")
                         .accept(MediaType.APPLICATION_JSON)
         )
                 .andExpect(status().isOk())
                 .andExpect(jsonPath("name", is("Bruce Wayne")))
-                .andExpect(jsonPath("location", is("Gotham City")));
+                .andExpect(jsonPath("location", is("Gotham City")))
+                .andDo(document("person-example",
+                        requestParameters(
+                                parameterWithName("name").description("Name of the person you are looking for")
+                        )
+                ));
     }
 }
