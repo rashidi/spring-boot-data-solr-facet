@@ -1,5 +1,6 @@
 package my.zin.rashidi.data.solr.domain;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import org.apache.solr.client.solrj.beans.Field;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.solr.core.mapping.SolrDocument;
@@ -14,6 +15,7 @@ public class Person {
 
     @Id
     @Field("_id")
+    @JsonIgnore
     private String id;
 
     @Field
