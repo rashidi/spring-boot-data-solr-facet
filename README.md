@@ -1,5 +1,5 @@
 # Solr Facet With Spring Boot Data Solr
-With less code there will be less mistake
+With less code there will be less mistake. _Also included sample for spring-restdocs_.
 
 ## Background
 While exploring Solr I discovered `facet` which similar to SQL `DISTINCT`. One thing lead to another I learnt that `spring-data-solr` supports `facet` with `@Facet` annotation.
