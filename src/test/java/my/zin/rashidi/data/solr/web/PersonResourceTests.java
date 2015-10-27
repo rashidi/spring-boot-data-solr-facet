@@ -29,7 +29,7 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
 /**
  * @author Rashidi Zin
  */
-@WebIntegrationTest("server.port:0")
+@WebIntegrationTest(randomPort = true)
 @RunWith(SpringJUnit4ClassRunner.class)
 @SpringApplicationConfiguration(classes = Application.class)
 public class PersonResourceTests {
