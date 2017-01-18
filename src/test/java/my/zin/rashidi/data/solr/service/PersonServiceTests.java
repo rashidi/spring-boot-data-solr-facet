@@ -1,6 +1,5 @@
 package my.zin.rashidi.data.solr.service;
 
-import my.zin.rashidi.data.solr.Application;
 import my.zin.rashidi.data.solr.domain.Person;
 import org.apache.commons.lang3.StringUtils;
 import org.junit.Assert;
@@ -9,16 +8,14 @@ import org.junit.Test;
 import org.junit.rules.ExpectedException;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.boot.test.IntegrationTest;
-import org.springframework.boot.test.SpringApplicationConfiguration;
-import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
+import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.test.context.junit4.SpringRunner;
 
 /**
  * @author Rashidi Zin
  */
-@IntegrationTest
-@RunWith(SpringJUnit4ClassRunner.class)
-@SpringApplicationConfiguration(classes = Application.class)
+@RunWith(SpringRunner.class)
+@SpringBootTest
 public class PersonServiceTests {
 
     @Rule
@@ -32,11 +29,11 @@ public class PersonServiceTests {
         Person batman = service.findByName("Bruce Wayne");
 
         Assert.assertEquals(
-                "Gotham City", batman.getLocation()
+            "Gotham City", batman.getLocation()
         );
 
         Assert.assertNull(
-                service.findByName("Selina Kyle")
+            service.findByName("Selina Kyle")
         );
     }
 
