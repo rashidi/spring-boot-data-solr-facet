@@ -3,7 +3,7 @@ package my.zin.rashidi.data.solr;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.builder.SpringApplicationBuilder;
-import org.springframework.boot.context.web.SpringBootServletInitializer;
+import org.springframework.boot.web.support.SpringBootServletInitializer;
 import org.springframework.context.annotation.Bean;
 import org.springframework.core.io.ClassPathResource;
 import org.springframework.core.io.Resource;
@@ -26,7 +26,7 @@ public class Application extends SpringBootServletInitializer {
         Jackson2RepositoryPopulatorFactoryBean factoryBean = new Jackson2RepositoryPopulatorFactoryBean();
 
         factoryBean.setResources(new Resource[]{
-                new ClassPathResource("data.json")
+            new ClassPathResource("data.json")
         });
 
         return factoryBean;
